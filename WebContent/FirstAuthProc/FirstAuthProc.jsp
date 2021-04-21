@@ -49,10 +49,15 @@ for(String item : Userday)
 
 
 
-
 //사용자 목표 칼로리, 예산 가져오기.
 int UsrKcal=memberdb.getKcallimit();
 int UsrBudget=memberdb.getBudget();
+for(String item : Usergenre)
+	System.out.println("장르는 :"+item);
+
+System.out.println("목표 칼로리 :"+UsrKcal);
+System.out.println("목표 예산 :"+UsrBudget);
+
 
 //(0)	목표 칼로리 및 예산내에 가능하도록 키워드를 뽑고 랜덤하게 키워드 배열을 만든다.
 //뽑아야될 키워드 수= 요일수 * 시간대종류수.
@@ -86,9 +91,9 @@ oneweekCheckDao.InsertFirstWeekCheck(UsrId, Userday);
 
 //식단 초기화
 usrdietMenuDao.resetUsrdiet(UsrId);
-
-
-
+System.out.println("메뉴키워드 print 전");
+for(String item : UsrMenuKeywordlst)
+System.out.println("사용자 메뉴키워드 : " +item);
 
 
 

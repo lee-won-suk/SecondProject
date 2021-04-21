@@ -11,14 +11,14 @@
 	String id = request.getParameter("id");
 	String pw = request.getParameter("pw");
 	String tel = request.getParameter("tel");
-	
+
+	if(tel=="")tel="00000000000";
+	System.out.println("tel은 : "+tel);
 	session.setAttribute("joinId", id);
 	session.setAttribute("joinPw", pw);
 	session.setAttribute("tel", tel);
 
-	System.out.println(id);
-	System.out.println(pw);
-	System.out.println(tel);
+
 
 %>
 <jsp:forward page="/main.jsp">

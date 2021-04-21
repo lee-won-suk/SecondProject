@@ -10,11 +10,12 @@
 	String sun = request.getParameter("sun"); 
 	
 	String days = mon+ " " + tue+ " " + wed+ " " + thu+ " " + fri+ " " + sat+ " " + sun ;
+	days=days.replaceAll("  "," ");
 	days = days.replaceAll("null", "");
 	days=days.trim();
 	//String [] Userday=days.split(" ");
 	//for( String item : Userday)
-	//System.out.println("사용자 요일은 : "+item);
+	//System.out.println("사용자 요일은 : "+days);
 	
 	//null값이 아니라면 session.setattribute
 	session.setAttribute("days", days);
@@ -24,6 +25,7 @@
 	String dinner = request.getParameter("dinner"); 
 	
 	String time = breakfast + " " + lunch + " " + dinner + " ";
+	time=time.replaceAll("  "," ");
 	time = time.replaceAll("null", "");
 	time=time.trim();
 	session.setAttribute("time", time);

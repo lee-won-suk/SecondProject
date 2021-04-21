@@ -15,7 +15,7 @@
 	String genre = korean + " " + chinese + " " + japanese + " " + western + " " + asian + " " + bunsik ;
 	genre = genre.replaceAll("null", "");
 	genre=genre.trim();
-	System.out.println(genre);
+
 	
 	String id = (String)session.getAttribute("joinId");
 	String pw = (String)session.getAttribute("joinPw");
@@ -25,6 +25,10 @@
 	String age = (String)session.getAttribute("age");
 	String gender = (String)session.getAttribute("gender");
 	String budget = (String)session.getAttribute("budget");
+	
+	
+	
+	
 	int intTel=0;
 	int intAge=0;
 	int intBudget=0;
@@ -35,6 +39,7 @@
 	}
 	catch(Exception e) {e.printStackTrace();}
 
+	System.out.println("예산은 : "+intBudget);
 	
 	int malekcallimit = 2600;
 	int femalekcallimit = 2100;

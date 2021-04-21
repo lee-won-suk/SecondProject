@@ -3,15 +3,15 @@
 <%
 	String age = request.getParameter("age");
 	
-	System.out.println("age : "+ age);
+
 	
 	String gender= request.getParameter("gender");
 	
-	System.out.println("gender : "+ gender);
+
 	
 	String budget = request.getParameter("budget");
 	
-	System.out.println("budget : " + budget);
+
 	
 	session.setAttribute("age", age);
 	session.setAttribute("gender", gender);
