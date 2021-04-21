@@ -32,22 +32,16 @@
 	//db로 추후 이미지 파일 가져오기
 	if(memberdb.getLvl()>=5 && memberdb.getLvl()<10) {
 		testing = "tomato";
-		out.print("<script>alert('5레벨');</script>");
 	}
 	else if(memberdb.getLvl()>=10 && memberdb.getLvl()<15) {
-		testing = "apple";
-		out.print("<script>alert('10레벨');</script>");}
+		testing = "apple";}
 	else if(memberdb.getLvl()>=15 && memberdb.getLvl()<20) {
-		testing = "pear";
-		out.print("<script>alert('15레벨');</script>");}
+		testing = "pear";}
 	else if(memberdb.getLvl()>=20 && memberdb.getLvl()<25) {
-		out.print("<script>alert('20레벨');</script>");
 		testing = "shortpumpkin";}
 	else if(memberdb.getLvl()>=25 && memberdb.getLvl()<30) {
-		out.print("<script>alert('25레벨');</script>");
 		testing = "melon";}
 	else if(memberdb.getLvl()>=30) {
-		out.print("<script>alert('30레벨');</script>");
 		testing = "watermelon";}
 	
 %>
@@ -120,26 +114,15 @@ td {
 	</tr>
 </table>
 <table>
+	<hr/>
 	<tr>
-		<td><svg xmlns="http://www.w3.org/2000/svg" width="50px" height="50px" fill="currentColor" class="bi bi-chat-square-fill" viewBox="0 0 16 16">
-  <path d="M2 0a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2.5a1 1 0 0 1 .8.4l1.9 2.533a1 1 0 0 0 1.6 0l1.9-2.533a1 1 0 0 1 .8-.4H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
-</svg></td>
-		<td><svg xmlns="http://www.w3.org/2000/svg" width="50px" height="50px" fill="currentColor" class="bi bi-chat-square-fill" viewBox="0 0 16 16">
-  <path d="M2 0a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2.5a1 1 0 0 1 .8.4l1.9 2.533a1 1 0 0 0 1.6 0l1.9-2.533a1 1 0 0 1 .8-.4H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
-</svg></td>
-		<td><svg xmlns="http://www.w3.org/2000/svg" width="50px" height="50px" fill="currentColor" class="bi bi-chat-square-fill" viewBox="0 0 16 16">
-  <path d="M2 0a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2.5a1 1 0 0 1 .8.4l1.9 2.533a1 1 0 0 0 1.6 0l1.9-2.533a1 1 0 0 1 .8-.4H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
-</svg></td>
+		<td><img src="<%=request.getContextPath()%>/img/coffee.png" width="75px" height="75px"/></td>
 	</tr>
 	<tr>
-		<td>상품명 <% out.print(" 붉닭볶음탕");%></td>
-		<td>상품명 <% out.print(" 문화상품권");%></td>
-		<td>상품명 <% out.print(" 음식할인권");%></td>
+		<td>상품명 <% out.print("아메리카노");%></td>
 	</tr>
 	<tr>
-		<td>가격 <% out.print(" 2,000" + "p"); %></td>
-		<td>가격 <% out.print(" 3,000" + "p"); %></td>
-		<td>가격 <% out.print(" 5,000" + "p"); %></td>
+		<td>가격 <% out.print(" 1,000" + "p"); %></td>
 	</tr>
 </table>
 <hr/>
