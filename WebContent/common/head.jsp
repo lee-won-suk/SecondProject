@@ -32,15 +32,12 @@ a:active{color:#ff00cc; text-decoration:underline; }
 <div id="fb-root"></div>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v10.0&appId=737218386920806&autoLogAppEvents=1" nonce="l3kBCvdV"></script>
 <center>
-<form action="<%=request.getContextPath()%>/logout/logoutProc.jsp">
-
 <table id="header" style="width:600px" bgcolor="#1cb581">
 	<tr>
 		<td><img src="<%=request.getContextPath()%>/img/logo.png" width="50px" height="50px"/></td>
-		 <td align="right"><input type="submit" id="lgout" value="logout"/><div class="fb-share-button" data-href="https://www.naver.com/" data-layout="button" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">ê³µì  í  ê¸°</a></div></td>
+		 <td align="right"><img src="<%=request.getContextPath()%>/img/logoutbtn.png" onclick="javascript:location.href='<%=request.getContextPath()%>/logout/logoutProc.jsp'" width="100px" height="30px"/><div class="fb-share-button" data-href="https://www.naver.com/" data-layout="button" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore"></a></div></td>
    </tr>
 </table>
-</form>
 </center>
 
 
