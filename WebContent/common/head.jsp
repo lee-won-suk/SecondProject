@@ -25,7 +25,7 @@ a:active{color:#ff00cc; text-decoration:underline; }
 	color:#ffffff;
 	background-color: #2E84E1;
 	width: 100px;
-	height: 25px;
+	height: 25px;;\
 }
 </style>
 <!-- Load Facebook SDK for JavaScript -->
