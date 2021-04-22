@@ -23,7 +23,7 @@ WeeklydietModProc/WeeklydietModProc.jsp
 	UserdietMenuDAO usrDietMenuDao=new UserdietMenuDAO();
 	List<Integer> UserOneWeekcheck=(List<Integer>)session.getAttribute("UserOneWeekcheck");
 
-	//String UsrId=(String)session.getAttribute("usrId"); //사용자 아이디 
+	String UsrId=(String)session.getAttribute("usrId"); //사용자 아이디 
 	
 
 //MemberDB에서 유저정보 받아오기.
@@ -31,7 +31,7 @@ MemberDAO memberdao=new MemberDAO();
 Memberdb memberdb=new Memberdb();
 
 //사용자가 입력한 요일과 시간대를 받아온다. 임의로 계정생성후 있다고 가정. 사용계정 = 'f1234'
-String UsrId="f1234";//임시로 아이디 설정.
+//String UsrId="f1234";//임시로 아이디 설정.
 memberdb=memberdao.getMemberInfo(UsrId);
 
 
@@ -44,8 +44,7 @@ for(String item : Userday)
 	item = item.replaceAll(" ","");
 for(String item : UserTime)
 	item = item.replaceAll(" ","");
-for(String item : Userday)
-	item = item.replaceAll(" ","");
+
 
 
 
@@ -134,6 +133,7 @@ MenuKeywordDAO menuKeywordDao=new MenuKeywordDAO();
 {
 	for(int i=0;i<Userday.length;i++)//사용자가 선택한 요일만큼 입력.
 	{
+		if(Userday[i].contentEquals("")!=true){
 		String UsrMenuKeyword=UsrMenuKeywordlst.get(i);//사용자의 예산과 칼로리에 맞는 메뉴키워드 1개. 문제없음.
 		
 		 List<Integer> menuKeywordlst=menuKeywordDao.getMenuKeywordKcalBud(UsrMenuKeyword);	
@@ -150,6 +150,7 @@ MenuKeywordDAO menuKeywordDao=new MenuKeywordDAO();
 		else 
 		usrdietMenuDao.InsertUsrdiet(UsrId, Userday[i], UserTime[0], UsrMenuKeyword, Reslst.get(0),Reslst.get(1),Reslst.get(2), menukeywordKcal, menukeywordBudget);				
 		//하나도 안들어갔을 때 문제 해결 필요
+		}
 	}
 	
 }   

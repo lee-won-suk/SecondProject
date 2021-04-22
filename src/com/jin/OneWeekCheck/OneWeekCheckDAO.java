@@ -71,9 +71,11 @@ public class OneWeekCheckDAO {
 			pstmt= conn.prepareStatement(sql);
 			for (String item : Userday )
 			{
+				if(item.contentEquals("")!=true) {
 			pstmt.setString(1, UsrId);
 			pstmt.setString(2, item);	
 			pstmt.executeUpdate();
+				}
 			}
 			pstmt.close();
 		} catch (SQLException e) {e.printStackTrace();
