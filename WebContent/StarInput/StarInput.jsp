@@ -73,17 +73,17 @@ function ischecked(formid){
 	<tr align="center" >
 	<td colspan="3" ><%=Time %></td>
 
-	<td    style="border-right: none;border-left: none;"   ><img id="res1" alt="test image" width="50" height="50"     >
+	<td    style="border-right: none;border-left: none;"   ><img src="<%=request.getContextPath()%>/img/crazy.png"  id="res1" alt="test image" width="50" height="50"     >
 	<br/><%=userdietdb.getResname1()%>
 	<br/><input name="check" onclick='checkOnlyOne(this)'  value="<%=userdietdb.getResname1()%>" type="checkbox"  />
 	</td>
 
-	<td id="res2" onclick="click('res1')"  style="border-right: none;border-left: none;" ><img  alt="test image" width="50" height="50">
+	<td id="res2" onclick="click('res1')"  style="border-right: none;border-left: none;" ><img src="<%=request.getContextPath()%>/img/hyunsun.png"  alt="test image" width="50" height="50">
 	<br/><%=userdietdb.getResname2()%>
 	<br/><input name="check"  onclick='checkOnlyOne(this)'  value="<%=userdietdb.getResname2()%>" type="checkbox"/>
 	</td>
 	
-	<td id="res3" onclick="click('res1')"   style="border-right: none;border-left: none;" ><img  alt="test image" width="50" height="50">
+	<td id="res3" onclick="click('res1')"   style="border-right: none;border-left: none;" ><img src="<%=request.getContextPath()%>/img/yeopgi.png"  alt="test image" width="50" height="50">
 	<br/><%=userdietdb.getResname3()%>
 	<br/><input name="check"  onclick='checkOnlyOne(this)'  value="<%=userdietdb.getResname3()%>"  type="checkbox"/>
 	</td>
