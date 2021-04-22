@@ -56,7 +56,7 @@ boolean isWeekcheck=true;
 
  for (int item : UserOneWeekcheck)
 {
-	if(item!=UsrTimeNum)//한번이라도 달성 못하면
+	if(item<UsrTimeNum)//한번이라도 달성 못하면
 	isWeekcheck=false;
 }
 //달성도를 다 달성하면 포인트 올려주기.

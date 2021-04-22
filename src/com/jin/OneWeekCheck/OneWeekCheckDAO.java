@@ -126,6 +126,23 @@ public class OneWeekCheckDAO {
 	 */
 	
 	
+	public void increaseAllPer(String UsrId){
+		String sql="UPDATE OneWeekCheckDB "
+				+ "SET "
+				+ "percent = percent+1 "
+				+ "WHERE id =? ";
+		try {
+			PreparedStatement pstmt= conn.prepareStatement(sql);
+			pstmt.setString(1, UsrId);
+			pstmt.executeUpdate();
+			pstmt.close();
+		} catch (SQLException e) {e.printStackTrace();
+		System.out.println("OneWeekCheckDao에서 문제발생.");}	
+	}
+	
+	
+	
+	
 	
 	
 }

@@ -45,4 +45,21 @@ public class LevelDAO {
 		} catch (SQLException e) {e.printStackTrace();}
 		return maxexp;
 	}
+	
+	//경험치 및 레벨값 변경
+	public void UpdateLevel(int exp, String id){
+		String sql="Update MemberDB " +
+				   "set "
+				   + " Lvl = Lvl+1 "
+				   + "exp = ? "
+				   + "where id= ? ";
+		try {
+			PreparedStatement pstmt= conn.prepareStatement(sql);
+			pstmt.setInt(1, exp);
+			pstmt.setString(2, id);
+			pstmt.executeUpdate();
+			pstmt.close();
+		} catch (SQLException e) {e.printStackTrace();}
+	}
+	
 }

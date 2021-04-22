@@ -47,10 +47,8 @@
 		pageName = "/FirstAuthProc/FirstAuthProc.jsp";
 	else if("WeeklydietModProc".contentEquals(currentPage))
 		pageName = "/WeeklydietModProc/WeeklydietModProc.jsp";
-	
-	
-	
-	
+	else if("AlloneweekProc".contentEquals(currentPage))
+		pageName = "/TodaydietMenu/AlloneweekProc.jsp";	
 	else if("TodaydietMenuProc".contentEquals(currentPage))
 		pageName = "/TodaydietMenu/TodaydietMenuProc.jsp";
 %>

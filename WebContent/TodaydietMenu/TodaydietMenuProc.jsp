@@ -1,3 +1,4 @@
+<%@page import="com.jin.level.LevelDAO"%>
 <%@page import="com.jin.Star.UserStarDAO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.jin.DTO.Resinfodb"%>
@@ -105,6 +106,8 @@ float [] starvalue=new float [3];
  starvalue[2] = usrStarDao.getResStarInfo(UsrId,userdietdb.getResname3(), starLst);
 
 
+ 
+  
 
 
 session.setAttribute("memberdb", memberdb);

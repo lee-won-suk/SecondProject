@@ -60,6 +60,8 @@ function getRes(resname)
 
 <a href="<%=request.getContextPath()%>/main.jsp?currentPage=StarInput" >[별점 입력]</a>
 &nbsp<a href="<%=request.getContextPath()%>/WeeklydietModProc/WeeklydietModProc.jsp">[일주일식단 로테이션]</a><br/>
+<a href="<%=request.getContextPath()%>//TodaydietMenu/AlloneweekProc.jsp">[달성도 전부채우기]</a><br/>
+exp:<%=memberdb.getExp()%>&nbsp point:<%=memberdb.getPoint()%>
 <!--  
 <a href="<%=request.getContextPath()%>/FirstAuthProc/FirstAuthProc.jsp" >[초기식단 버튼 아이디:f1234고정(테스트용)]</a><br/>
 <a href="<%=request.getContextPath()%>/main.jsp?currentPage=StarInput" >[별점 입력 버튼(테스트용)]</a>

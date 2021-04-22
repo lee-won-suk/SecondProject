@@ -19,8 +19,11 @@
 	memberdb=memberdao.getMemberInfo(userId);
 	List<String> lst = memberdao.getId();
 	
+	
+
 	int usrlvl = memberdb.getLvl();
 	int maxexp = leveldao.getLeveldb(usrlvl);
+
 	
 	String [] usrgenre = memberdb.getGenre().split(" ");
 	
