@@ -105,7 +105,7 @@ System.out.println("메뉴키워드 print 전");
 for(String item : UsrMenuKeywordlst)
 System.out.println("사용자 메뉴키워드 : " +item);
 
-
+System.out.println("날짜 개수"+Userday.length);
 
  //1. 사용자가 선택한 요일이 1개인 경우;
   if(UserTime.length==1)
