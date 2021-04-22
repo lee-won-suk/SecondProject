@@ -47,7 +47,7 @@ for(String item : Userday)
 for(String item : UserTime)
 	item = item.replaceAll(" ","");
 for(String item : Userday)
-	item = item.replaceAll(" ","");
+	System.out.println("유저 선택 날 :"+item);
 
 
 
@@ -112,14 +112,17 @@ System.out.println("사용자 메뉴키워드 : " +item);
 {
 	for(int i=0;i<Userday.length;i++)//사용자가 선택한 요일만큼 입력.
 	{
-		String UsrMenuKeyword=UsrMenuKeywordlst.get(i);//사용자의 예산과 칼로리에 맞는 메뉴키워드 1개. 문제없음.
-		System.out.println("뽑은 메뉴키워드 : "+UsrMenuKeyword);
-		 List<Integer> menuKeywordlst=menuKeywordDao.getMenuKeywordKcalBud(UsrMenuKeyword);	
-		int menukeywordKcal=menuKeywordlst.get(0); //메뉴키워드의 칼로리, 예산 받아오기.
-		int menukeywordBudget=menuKeywordlst.get(1);		
-		List<String> Reslst=resDao.getFirstResInfo(UsrMenuKeyword);//메뉴키워드 별로 한개씩 집어넣어서 식당목록을 가져오고
-		Collections.shuffle(Reslst);//, shuffle 후 거기서 3개를 insert 한다.	
-		usrdietMenuDao.InsertUsrdiet(UsrId, Userday[i], UserTime[0], UsrMenuKeyword, Reslst.get(0),Reslst.get(1),Reslst.get(2), menukeywordKcal, menukeywordBudget);
+		if(Userday[i].contentEquals("")!=true){//요일값이 있을 때		
+			String UsrMenuKeyword=UsrMenuKeywordlst.get(i);//사용자의 예산과 칼로리에 맞는 메뉴키워드 1개. 문제없음.
+			System.out.println("뽑은 메뉴키워드 : "+UsrMenuKeyword);
+			 List<Integer> menuKeywordlst=menuKeywordDao.getMenuKeywordKcalBud(UsrMenuKeyword);	
+			int menukeywordKcal=menuKeywordlst.get(0); //메뉴키워드의 칼로리, 예산 받아오기.
+			int menukeywordBudget=menuKeywordlst.get(1);		
+			List<String> Reslst=resDao.getFirstResInfo(UsrMenuKeyword);//메뉴키워드 별로 한개씩 집어넣어서 식당목록을 가져오고
+			Collections.shuffle(Reslst);//, shuffle 후 거기서 3개를 insert 한다.	
+			usrdietMenuDao.InsertUsrdiet(UsrId, Userday[i], UserTime[0], UsrMenuKeyword, Reslst.get(0),Reslst.get(1),Reslst.get(2), menukeywordKcal, menukeywordBudget);
+			
+		}
 		
 	}
 	

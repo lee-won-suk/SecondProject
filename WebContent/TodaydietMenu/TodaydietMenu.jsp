@@ -60,7 +60,7 @@ function getRes(resname)
 <a href="<%=request.getContextPath()%>/main.jsp?currentPage=StarInput" >[별점 입력 버튼(테스트용)]</a>
 &nbsp<a href="<%=request.getContextPath()%>/WeeklydietModProc/WeeklydietModProc.jsp">[일주일식단 변경버튼 아이디 :f1234일단고정(테스트)]</a><br/>
 
-달성도t
+달성도
 <table  width="600px" >
 <tr align="center" >
 	<%for (int a=0; a<UserdaySize; a++)  
@@ -81,6 +81,12 @@ function getRes(resname)
 	<%if("e".contentEquals(Userday[a])==true){%>
 	<td >금</td>
 	<%}%>	
+	<%if("f".contentEquals(Userday[a])==true){%>
+	<td >토</td>
+	<%}%>	
+	<%if("g".contentEquals(Userday[a])==true){%>
+	<td >일</td>
+	<%}%>		
 	<%}%>
 	</tr>	
 </table>
