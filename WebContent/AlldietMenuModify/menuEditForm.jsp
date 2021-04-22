@@ -85,7 +85,7 @@ session.setAttribute("menuKeyword2", menuKeyword2);
 	</tr>
 
 	<tr align="center">
-	<td class="left bottom" rowspan="2" ><img alt="test image" width="150" height="100">
+	<td class="left bottom" rowspan="2" ><img src="<%=request.getContextPath()%>/img/<%=menuKeyword%>.jpg" alt="test image" width="150" height="100">
 	</td>
 	<td><%=resName%></td>
 	<td class="right bottom" rowspan="2"><%= bestMenu%></td>
@@ -98,7 +98,7 @@ session.setAttribute("menuKeyword2", menuKeyword2);
 	</tr>
 
 	<tr align="center">
-	<td class="left bottom" rowspan="2"><img  alt="test image" width="150" height="100">
+	<td class="left bottom" rowspan="2"><img src="<%=request.getContextPath()%>/img/<%=menuKeyword2%>.jpg"  alt="test image" width="150" height="100">
 	</td>
 	<td class="bottom" rowspan="2"><%=menuKeyword2 %>
 	<br/><br/>선택<input type="checkbox" id="check" name="check" value="menu"/></td>

@@ -57,12 +57,13 @@ function getRes(resname)
 
 </script>
 
+<<<<<<< HEAD
 <!--  
 <a href="<%=request.getContextPath()%>/FirstAuthProc/FirstAuthProc.jsp" >[초기식단 버튼 아이디:f1234고정(테스트용)]</a><br/>
 <a href="<%=request.getContextPath()%>/main.jsp?currentPage=StarInput" >[별점 입력 버튼(테스트용)]</a>
 &nbsp<a href="<%=request.getContextPath()%>/WeeklydietModProc/WeeklydietModProc.jsp">[일주일식단 변경버튼 아이디 :f1234일단고정(테스트)]</a><br/>
 -->
-달성도
+
 <table  width="600px" >
 <tr align="center" >
 	<%for (int a=0; a<UserdaySize; a++)  
