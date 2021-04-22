@@ -2,6 +2,7 @@
 FirstAuthProc/FirstAuthProc.jsp
   -->
 
+<%@page import="com.jin.LikeCheck.UserLikeCheckDAO"%>
 <%@page import="com.jin.OneWeekCheck.OneWeekCheckDAO"%>
 <%@page import="com.jin.Star.UserStarDAO"%>
 <%@page import="java.util.ArrayList"%>
@@ -20,6 +21,7 @@ FirstAuthProc/FirstAuthProc.jsp
 	String contextPath =request.getContextPath();
 	String path = contextPath +  "/main.jsp";	
 
+	UserLikeCheckDAO usrlikecheckDao=new UserLikeCheckDAO();
 
 //사용자가 입력한 요일과 시간대를 받아온다. 임의로 계정생성후 있다고 가정. 사용계정 = 'f1234'
 //MemberDB에서 유저정보 받아오기.
@@ -88,6 +90,14 @@ usrStarDao.insertFirstStarInfo( UsrId , UsrKcal,UsrBudget);
 //달성도 데이터 전부 0으로 넣어주기.
 OneWeekCheckDAO oneweekCheckDao=new OneWeekCheckDAO();
 oneweekCheckDao.InsertFirstWeekCheck(UsrId, Userday);
+
+
+
+//좋아요 데이터 전부 1로 넣어주기.
+List <String> menukeywordLst=usrlikecheckDao.getAllMenuKeyword();
+
+usrlikecheckDao.InsertFirstlikeCheck(UsrId, menukeywordLst);
+
 
 //식단 초기화
 usrdietMenuDao.resetUsrdiet(UsrId);
