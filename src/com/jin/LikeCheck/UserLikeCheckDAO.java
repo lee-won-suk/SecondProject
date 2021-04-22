@@ -113,6 +113,56 @@ public class UserLikeCheckDAO {
 		}
 	
 	
+		//초기식단 좋아요 1로 넣어주기 
+		public void InsertFirstlikeCheck(String UsrId,List<String> lst){
+			String deletesql="delete from LikeCheckDB "
+					+ "where id=? ";
+			
+			String sql="INSERT INTO LikeCheckDB (id,menukeyword,islike) "
+					+ "VALUES(?,?,1)  ";
+		
+			try {
+				PreparedStatement pstmt= conn.prepareStatement(deletesql);
+			
+				pstmt.setString(1, UsrId);	
+				pstmt.executeUpdate();		
+				pstmt.close();
+				
+				for (String item : lst )
+				{		
+				pstmt= conn.prepareStatement(sql);
+				pstmt.setString(1, UsrId);
+				pstmt.setString(2, item);	
+				pstmt.executeUpdate();
+				}
+				pstmt.close();
+			} catch (SQLException e) {e.printStackTrace();
+			System.out.println("insertfirstlikecheck에서 문제발생");}
+			
+		}
+		
+		
+		//메뉴키워드 전부 뽑아내기.
+		public List<String> getAllMenuKeyword(){
+			String sql="SELECT menukeyword "
+					+ "FROM  MenuKeywordDB  ";
+			
+			List<String> lst=new ArrayList<String>();
+			try {
+				PreparedStatement pstmt= conn.prepareStatement(sql);
+				ResultSet rs=pstmt.executeQuery();
+				while(rs.next())
+				{
+				 lst.add(rs.getString(1));
+				}
+				rs.close();
+				pstmt.close();
+			} catch (SQLException e) {e.printStackTrace();}
+			return lst;
+		}
+		
+		
+		
 	
 	
 }
